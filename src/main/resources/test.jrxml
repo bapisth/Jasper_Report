@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="test" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f247f1a1-1e86-4052-be9c-7c3b365d5cbe">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="hello" uuid="49c116a3-98fd-4437-8faa-a8d0c687a4e8">
+		<field name="branch" class="java.lang.String">
+			<fieldDescription><![CDATA[branch]]></fieldDescription>
+		</field>
+		<field name="mob" class="java.lang.String">
+			<fieldDescription><![CDATA[mob]]></fieldDescription>
+		</field>
+		<field name="roll" class="java.lang.String">
+			<fieldDescription><![CDATA[roll]]></fieldDescription>
+		</field>
+		<field name="name" class="java.lang.String">
+			<fieldDescription><![CDATA[name]]></fieldDescription>
+		</field>
+	</subDataset>
+	<parameter name="studentdDataSource" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<title>
+		<band height="32" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="32" uuid="6dc58e04-cd3e-4ec2-afa4-3cf58baa2a72"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[First In BIPROS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="35" uuid="31fa9d45-86b3-42a1-9fe0-8d20fefb55cd"/>
+				<textElement textAlignment="Center">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[This is page Header]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="107" height="20" uuid="b3100c77-4556-4827-96a5-7c0237e8fc78"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="138" y="0" width="97" height="20" uuid="7c3c18e3-c620-4664-a6ed-b0fb6d03b499"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Roll No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="264" y="0" width="93" height="20" uuid="c3c68e0c-c9db-4391-8bec-ab8ffc58756b"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Branch]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="394" y="0" width="100" height="20" uuid="555cee4c-194c-45ce-9c13-8f3accf42696"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Mobile]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<componentElement>
+				<reportElement x="0" y="0" width="555" height="21" uuid="61ba524c-dfbb-4e03-b237-0580888250a2"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="hello" uuid="23f1174f-e0e2-44ce-b6f3-6d50ede00e59">
+						<dataSourceExpression><![CDATA[$P{studentdDataSource}]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="21" width="555">
+						<textField>
+							<reportElement x="7" y="0" width="100" height="20" uuid="b9f886ed-4d24-49a5-a2fa-f40692b6a272"/>
+							<textElement textAlignment="Center">
+								<font size="14"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="138" y="0" width="100" height="20" uuid="02a865c4-d5f8-404e-8432-47dc66accfbc"/>
+							<textElement textAlignment="Center">
+								<font size="14"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{roll}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="264" y="0" width="93" height="20" uuid="80a66acd-5183-4ab9-94a7-503030171fc2"/>
+							<textElement textAlignment="Center">
+								<font size="14"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{branch}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="394" y="0" width="100" height="20" uuid="f78bc911-d8bb-488b-ad75-32fd36068125"/>
+							<textElement textAlignment="Center">
+								<font size="14"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{mob}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+	</detail>
+	<noData>
+		<band height="38">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="38" uuid="88d6f8f1-5e2e-4122-b3cd-7ced9b3ff172"/>
+				<textElement textAlignment="Center">
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No Data Found]]></text>
+			</staticText>
+		</band>
+	</noData>
+</jasperReport>
