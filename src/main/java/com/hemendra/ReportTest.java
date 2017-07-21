@@ -19,7 +19,7 @@ public class ReportTest {
 
         Student student = null;
         List<Student> studentList = new ArrayList<>();
-        for (int i=0; i< 10; i++) {
+        for (int i=0; i< 100; i++) {
             student = new Student();
             student.setName("A "+ (char)i);
             student.setBranch("Branch-"+  i*10);
